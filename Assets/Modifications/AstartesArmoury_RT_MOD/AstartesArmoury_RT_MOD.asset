@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   Manifest:
     UniqueName: AstartesArmoury_RT_MOD
-    Version: 1.0.3
+    Version: 1.0.4
     DisplayName: Astartes Armoury
     Description: Three deliberately powerful named weapons for a Deathwatch Rogue Trader.
     Author: Poffl

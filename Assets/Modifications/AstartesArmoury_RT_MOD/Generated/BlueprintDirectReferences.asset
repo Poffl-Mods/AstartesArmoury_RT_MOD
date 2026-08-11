@@ -19,12 +19,6 @@ MonoBehaviour:
   - AssetId: 162ea8c0a03045446a4cb32b44ddb9d8
     FileId: 11400000
     Asset: {fileID: 11400000, guid: 162ea8c0a03045446a4cb32b44ddb9d8, type: 2}
-  - AssetId: 01d1fd02f12c408418ebacc572c8ed2c
-    FileId: 11400000
-    Asset: {fileID: 11400000, guid: 01d1fd02f12c408418ebacc572c8ed2c, type: 2}
-  - AssetId: 7e4d15d8c9f54d14c8621ba099ec3931
-    FileId: 11400000
-    Asset: {fileID: 11400000, guid: 7e4d15d8c9f54d14c8621ba099ec3931, type: 2}
   - AssetId: 9c2dc5f2544bc47479419b7414bf646b
     FileId: 11400000
     Asset: {fileID: 11400000, guid: 9c2dc5f2544bc47479419b7414bf646b, type: 2}

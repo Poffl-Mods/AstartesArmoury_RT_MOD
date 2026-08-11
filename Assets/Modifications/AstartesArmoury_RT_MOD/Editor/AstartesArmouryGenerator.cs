@@ -27,6 +27,7 @@ namespace AstartesArmoury.Editor
         internal const string GrantMarker = "192cf51626f64fcb997547df59eabb0f";
 
         private const string Annihilator = "781b90112a784f03843bb8faa34d1ae7";
+        private const string AstartesBoltPistol = "5e1bae4c2c7e4bd99411173f8dbe74f0";
         private const string Eviscerator = "af978f6d159b464d9fd6cf71ce056993";
         private const string EvisceratorUnique = "4d87435ddfa042269c1fe35df0430f8b";
         private const string Sarragus = "dec66b3861c64c088c5f38fd49024d44";
@@ -81,19 +82,20 @@ namespace AstartesArmoury.Editor
 
             JObject vigil = PrepareItem(Load(Annihilator), Vigil, Annihilator,
                 "aa-vigil-effect", VigilEffect, "aa-vigil-bs", BallisticFeature);
-            SetWeaponModel(vigil, "e59b1e82f8f33d248ab3c25cf8597719", 98770554346048773L);
-            SetWeaponText(vigil, "aa-vigil-name", "aa-vigil-desc");
+            ApplyAstartesBoltPistolPresentation(vigil, Load(AstartesBoltPistol));
+            SetWeaponText(vigil, "aa-vigil-name", "aa-vigil-desc", "aa-vigil-flavor");
             Override(vigil, "WarhammerDamage", 30);
             Override(vigil, "WarhammerMaxDamage", 45);
             Override(vigil, "WarhammerPenetration", 25);
             Override(vigil, "RateOfFire", 3);
-            Override(vigil, "IsTwoHanded", false);
             Save("VigilsOath_Item", vigil);
 
             JObject final = PrepareItem(Load(Eviscerator), FinalJudgement, Eviscerator,
                 "aa-final-ws", WeaponFeature);
             SetWeaponModel(final, "d65a26d466550cd4a9846420f3c3e006", 3206943657695844805L);
-            SetWeaponText(final, "aa-final-name", "aa-final-desc");
+            SetWeaponIcon(final, "09a75554c7a01e246bb0e5424e4308bb", 21300000L);
+            SetWeaponText(final, "aa-final-name", "aa-final-desc", "aa-final-flavor");
+            RemoveInvertedFactRestrictions(final);
             Override(final, "WarhammerDamage", 34);
             Override(final, "WarhammerMaxDamage", 50);
             Override(final, "WarhammerPenetration", 30);
@@ -110,7 +112,9 @@ namespace AstartesArmoury.Editor
             JObject wrath = PrepareItem(Load(Sarragus), Wrath, Sarragus,
                 "aa-wrath-effect", WrathEffect, "aa-wrath-bs", BallisticFeature);
             SetWeaponModel(wrath, "4fcbe5a3d7a730c489e9a23b53e1cb20", 5139631943559371841L);
-            SetWeaponText(wrath, "aa-wrath-name", "aa-wrath-desc");
+            SetWeaponIcon(wrath, "4330237d7f0d749449615aac75831401", 21300000L);
+            SetWeaponText(wrath, "aa-wrath-name", "aa-wrath-desc", "aa-wrath-flavor");
+            RemoveInvertedFactRestrictions(wrath);
             Override(wrath, "WarhammerDamage", 12);
             Override(wrath, "WarhammerMaxDamage", 18);
             Override(wrath, "WarhammerPenetration", 30);
@@ -207,26 +211,58 @@ namespace AstartesArmoury.Editor
 
         private static void WriteLocalization()
         {
-            var strings = new JArray(
-                Entry("aa-vigil-name", "Vigil's Oath"),
-                Entry("aa-vigil-desc", "A bolt rifle kept ready through the longest watches. Each hit grants +10 percentage points of critical damage until combat ends, stacking up to 20 times. While equipped, the wielder gains +10 Ballistic Skill."),
-                Entry("aa-final-name", "Final Judgement"),
-                Entry("aa-final-desc", "A two-handed chain blade built to conclude any sentence. It adds twice the wielder's Strength bonus to damage, improves chain-weapon critical damage, grants +10 parry, and can deliver three attacks to one target for 2 AP. While equipped, the wielder gains +10 Weapon Skill."),
-                Entry("aa-wrath-name", "God-Emperor's Wrath"),
-                Entry("aa-wrath-desc", "A heavy bolter whose cadence rises with every execution. Each kill made with this weapon grants +1 rate of fire until combat ends, stacking up to 10 times. While equipped, the wielder gains +10 Ballistic Skill."));
+            var strings = new JObject
+            {
+                ["aa-vigil-name"] = Entry("Vigil's Oath"),
+                ["aa-vigil-desc"] = Entry("While equipped, the wielder gains +10 Ballistic Skill. Each hit grants +10% critical damage until combat ends, stacking up to 20 times."),
+                ["aa-vigil-flavor"] = Entry("Forged for a transhuman hand, this pistol keeps vigil where lesser weapons fall silent."),
+                ["aa-final-name"] = Entry("Final Judgement"),
+                ["aa-final-desc"] = Entry("While equipped, the wielder gains +10 Weapon Skill. This weapon gains +50% chain critical damage and +10% parry, and can perform a three-hit special attack against one target for 2 AP."),
+                ["aa-final-flavor"] = Entry("Its chain-teeth have pronounced the Emperor's final judgement on countless foes."),
+                ["aa-wrath-name"] = Entry("God-Emperor's Wrath"),
+                ["aa-wrath-desc"] = Entry("While equipped, the wielder gains +10 Ballistic Skill. Each kill made with this weapon grants +1 rate of fire until combat ends, stacking up to 10 times."),
+                ["aa-wrath-flavor"] = Entry("Every report is a hymn; every spent casing, an offering.")
+            };
             File.WriteAllText(Path.Combine(Root, "Localization", "enGB.json"),
                 new JObject { ["strings"] = strings }.ToString(Formatting.Indented));
         }
 
-        private static JObject Entry(string key, string value) =>
-            new JObject { ["Key"] = key, ["Value"] = value };
+        private static JObject Entry(string value) =>
+            new JObject { ["Offset"] = 0, ["Text"] = value };
 
-        private static void SetWeaponText(JObject root, string name, string description)
+        private static void SetWeaponText(JObject root, string name, string description, string flavor)
         {
             root["Data"]["m_DisplayName"] = Localized(name);
             root["Data"]["m_Description"] = Localized(description);
+            root["Data"]["m_FlavorText"] = Localized(flavor);
             AddOverride(root, "m_DisplayName");
             AddOverride(root, "m_Description");
+            AddOverride(root, "m_FlavorText");
+        }
+
+        private static void ApplyAstartesBoltPistolPresentation(JObject root, JObject pistol)
+        {
+            JObject targetVisual = (JObject)root["Data"]["m_VisualParameters"];
+            JObject pistolVisual = (JObject)pistol["Data"]["m_VisualParameters"];
+            foreach (JProperty property in pistolVisual.Properties())
+            {
+                targetVisual[property.Name] = property.Value.DeepClone();
+                AddOverride(root, "m_VisualParameters." + property.Name);
+            }
+
+            // Unity object references are null in BlueprintsDatabase's JSON clone, so preserve the exact
+            // vanilla Astartes Bolt Pistol prefab and icon references explicitly.
+            SetWeaponModel(root, "7c6a9b9d7453208459edc8d1bf909bb2", 3833531140989073636L);
+            SetWeaponIcon(root, "582ba3e6d80a8ce4d888c7641b3c5f79", 21300000L);
+
+            root["Data"]["AbilityContainer"] = pistol["Data"]["AbilityContainer"].DeepClone();
+            foreach (JProperty ability in ((JObject)pistol["Data"]["AbilityContainer"]).Properties())
+                foreach (JProperty field in ((JObject)ability.Value).Properties())
+                    AddOverride(root, "WeaponAbilities." + ability.Name + "." + field.Name);
+
+            Override(root, "Category", "Pistol");
+            Override(root, "m_HoldingType", "OneHanded");
+            Override(root, "IsTwoHanded", false);
         }
 
         private static void SetWeaponModel(JObject root, string guid, long fileId)
@@ -237,6 +273,25 @@ namespace AstartesArmoury.Editor
                 ["fileid"] = fileId
             };
             AddOverride(root, "m_VisualParameters.m_WeaponModel");
+        }
+
+        private static void SetWeaponIcon(JObject root, string guid, long fileId)
+        {
+            root["Data"]["m_Icon"] = new JObject
+            {
+                ["guid"] = guid,
+                ["fileid"] = fileId
+            };
+            AddOverride(root, "m_Icon");
+        }
+
+        private static void RemoveInvertedFactRestrictions(JObject root)
+        {
+            JArray components = (JArray)root["Data"]["Components"];
+            foreach (JObject component in components.OfType<JObject>()
+                         .Where(c => c["$type"]?.ToString().Contains("EquipmentRestrictionHasFacts") == true
+                                     && c["m_Inverted"]?.Value<bool>() == true).ToArray())
+                component.Remove();
         }
 
         private static JObject Localized(string key) => new JObject

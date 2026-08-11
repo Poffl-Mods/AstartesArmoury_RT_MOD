@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+using HarmonyLib;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Items;
@@ -7,6 +9,7 @@ using Kingmaker.Modding;
 using Kingmaker.PubSubSystem;
 using Kingmaker.PubSubSystem.Core;
 using Kingmaker.UnitLogic.Progression.Features;
+using Kingmaker.View.Equipment;
 
 namespace AstartesArmoury
 {
@@ -30,6 +33,7 @@ namespace AstartesArmoury
         {
             s_modification = modification;
             EventBus.Subscribe(Handler);
+            new Harmony(modification.Manifest.UniqueName).PatchAll(Assembly.GetExecutingAssembly());
             Log("[Grant] Runtime handler registered.");
         }
 
@@ -96,6 +100,24 @@ namespace AstartesArmoury
         private static void LogError(string message, Exception exception)
         {
             s_modification?.Logger.Error(exception, message);
+        }
+    }
+
+    [HarmonyPatch(typeof(UnitViewHandSlotData), "OwnerWeaponScale", MethodType.Getter)]
+    internal static class FinalJudgementWeaponScalePatch
+    {
+        private const string FinalJudgementGuid = "700385a6da364d12880ddffd1d3896b2";
+        private const float ScaleMultiplier = 1.30f;
+
+        [HarmonyPostfix]
+        private static void Postfix(UnitViewHandSlotData __instance, ref float __result)
+        {
+            BaseUnitEntity owner = __instance?.Owner as BaseUnitEntity;
+            if (owner?.Progression?.Race?.AssetGuid != "2302e1d517f847e6aef04c8c4a24d598")
+                return;
+            if (__instance.VisibleItem?.Blueprint?.AssetGuid != FinalJudgementGuid)
+                return;
+            __result *= ScaleMultiplier;
         }
     }
 

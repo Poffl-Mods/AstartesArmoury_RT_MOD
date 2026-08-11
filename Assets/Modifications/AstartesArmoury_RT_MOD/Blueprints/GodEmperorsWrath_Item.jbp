@@ -7,8 +7,10 @@
       "$AddFactToEquipmentWielder$aa-wrath-effect",
       "$AddFactToEquipmentWielder$aa-wrath-bs",
       "m_VisualParameters.m_WeaponModel",
+      "m_Icon",
       "m_DisplayName",
       "m_Description",
+      "m_FlavorText",
       "WarhammerDamage",
       "WarhammerMaxDamage",
       "WarhammerPenetration",
@@ -53,22 +55,6 @@
         },
         "m_Overrides": [],
         "Version": 1
-      },
-      {
-        "$type": "d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts",
-        "name": "$EquipmentRestrictionHasFacts$4cff4881-a425-4fea-b7ae-bc56505d6458",
-        "m_Flags": 0,
-        "PrototypeLink": {
-          "guid": "dec66b3861c64c088c5f38fd49024d44",
-          "name": "$EquipmentRestrictionHasFacts$4cff4881-a425-4fea-b7ae-bc56505d6458"
-        },
-        "m_Overrides": [],
-        "m_Facts": [
-          "!bp_c7a53b43ac5f4f11a1aef612dd3f4f71",
-          "!bp_590cb5c394ee4b5eb213121c96063dec"
-        ],
-        "m_Inverted": true,
-        "All": false
       },
       {
         "$type": "d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts",
@@ -124,9 +110,12 @@
       "m_JsonPath": "",
       "Shared": null
     },
-    "m_Icon": null,
+    "m_Icon": {
+      "guid": "4330237d7f0d749449615aac75831401",
+      "fileid": 21300000
+    },
     "m_FlavorText": {
-      "m_Key": "",
+      "m_Key": "aa-wrath-flavor",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",

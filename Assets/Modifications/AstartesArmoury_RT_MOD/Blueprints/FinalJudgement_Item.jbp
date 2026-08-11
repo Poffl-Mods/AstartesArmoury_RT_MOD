@@ -6,8 +6,10 @@
     "m_Overrides": [
       "$AddFactToEquipmentWielder$aa-final-ws",
       "m_VisualParameters.m_WeaponModel",
+      "m_Icon",
       "m_DisplayName",
       "m_Description",
+      "m_FlavorText",
       "WarhammerDamage",
       "WarhammerMaxDamage",
       "WarhammerPenetration",
@@ -41,23 +43,6 @@
         },
         "m_Overrides": [],
         "m_Fact": "!bp_53c19a9468d24539863989b3be9ed1f5"
-      },
-      {
-        "$type": "d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts",
-        "name": "$EquipmentRestrictionHasFacts$132eaa77-9d4f-432b-b2b5-d6d18d49db8a",
-        "m_Flags": 0,
-        "PrototypeLink": {
-          "guid": "af978f6d159b464d9fd6cf71ce056993",
-          "name": "$EquipmentRestrictionHasFacts$132eaa77-9d4f-432b-b2b5-d6d18d49db8a"
-        },
-        "m_Overrides": [],
-        "m_Facts": [
-          "!bp_950565a69d144391897cdc0024747755",
-          "!bp_c7a53b43ac5f4f11a1aef612dd3f4f71",
-          "!bp_590cb5c394ee4b5eb213121c96063dec"
-        ],
-        "m_Inverted": true,
-        "All": false
       },
       {
         "$type": "3c5267edd045432ab5bd6dbe606d4da3, AdditionalDescriptionComponent",
@@ -127,16 +112,16 @@
       "m_JsonPath": "",
       "Shared": null
     },
-    "m_Icon": null,
+    "m_Icon": {
+      "guid": "09a75554c7a01e246bb0e5424e4308bb",
+      "fileid": 21300000
+    },
     "m_FlavorText": {
-      "m_Key": "",
+      "m_Key": "aa-final-flavor",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
-      "Shared": {
-        "assetguid": "01d1fd02f12c408418ebacc572c8ed2c",
-        "stringkey": "af57d9a9-032d-4b54-8311-acf0aa331ab2"
-      }
+      "Shared": null
     },
     "m_NonIdentifiedNameText": {
       "m_Key": "",

@@ -1,28 +1,40 @@
 {
-  "strings": [
-    {
-      "Key": "aa-vigil-name",
-      "Value": "Vigil's Oath"
+  "strings": {
+    "aa-vigil-name": {
+      "Offset": 0,
+      "Text": "Vigil's Oath"
     },
-    {
-      "Key": "aa-vigil-desc",
-      "Value": "A bolt rifle kept ready through the longest watches. Each hit grants +10 percentage points of critical damage until combat ends, stacking up to 20 times. While equipped, the wielder gains +10 Ballistic Skill."
+    "aa-vigil-desc": {
+      "Offset": 0,
+      "Text": "While equipped, the wielder gains +10 Ballistic Skill. Each hit grants +10% critical damage until combat ends, stacking up to 20 times."
     },
-    {
-      "Key": "aa-final-name",
-      "Value": "Final Judgement"
+    "aa-vigil-flavor": {
+      "Offset": 0,
+      "Text": "Forged for a transhuman hand, this pistol keeps vigil where lesser weapons fall silent."
     },
-    {
-      "Key": "aa-final-desc",
-      "Value": "A two-handed chain blade built to conclude any sentence. It adds twice the wielder's Strength bonus to damage, improves chain-weapon critical damage, grants +10 parry, and can deliver three attacks to one target for 2 AP. While equipped, the wielder gains +10 Weapon Skill."
+    "aa-final-name": {
+      "Offset": 0,
+      "Text": "Final Judgement"
     },
-    {
-      "Key": "aa-wrath-name",
-      "Value": "God-Emperor's Wrath"
+    "aa-final-desc": {
+      "Offset": 0,
+      "Text": "While equipped, the wielder gains +10 Weapon Skill. This weapon gains +50% chain critical damage and +10% parry, and can perform a three-hit special attack against one target for 2 AP."
     },
-    {
-      "Key": "aa-wrath-desc",
-      "Value": "A heavy bolter whose cadence rises with every execution. Each kill made with this weapon grants +1 rate of fire until combat ends, stacking up to 10 times. While equipped, the wielder gains +10 Ballistic Skill."
+    "aa-final-flavor": {
+      "Offset": 0,
+      "Text": "Its chain-teeth have pronounced the Emperor's final judgement on countless foes."
+    },
+    "aa-wrath-name": {
+      "Offset": 0,
+      "Text": "God-Emperor's Wrath"
+    },
+    "aa-wrath-desc": {
+      "Offset": 0,
+      "Text": "While equipped, the wielder gains +10 Ballistic Skill. Each kill made with this weapon grants +1 rate of fire until combat ends, stacking up to 10 times."
+    },
+    "aa-wrath-flavor": {
+      "Offset": 0,
+      "Text": "Every report is a hymn; every spent casing, an offering."
     }
-  ]
+  }
 }
