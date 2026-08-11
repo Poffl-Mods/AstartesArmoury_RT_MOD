@@ -1,0 +1,28 @@
+{
+  "strings": [
+    {
+      "Key": "aa-vigil-name",
+      "Value": "Vigil's Oath"
+    },
+    {
+      "Key": "aa-vigil-desc",
+      "Value": "A bolt rifle kept ready through the longest watches. Each hit grants +10 percentage points of critical damage until combat ends, stacking up to 20 times. While equipped, the wielder gains +10 Ballistic Skill."
+    },
+    {
+      "Key": "aa-final-name",
+      "Value": "Final Judgement"
+    },
+    {
+      "Key": "aa-final-desc",
+      "Value": "A two-handed chain blade built to conclude any sentence. It adds twice the wielder's Strength bonus to damage, improves chain-weapon critical damage, grants +10 parry, and can deliver three attacks to one target for 2 AP. While equipped, the wielder gains +10 Weapon Skill."
+    },
+    {
+      "Key": "aa-wrath-name",
+      "Value": "God-Emperor's Wrath"
+    },
+    {
+      "Key": "aa-wrath-desc",
+      "Value": "A heavy bolter whose cadence rises with every execution. Each kill made with this weapon grants +1 rate of fire until combat ends, stacking up to 10 times. While equipped, the wielder gains +10 Ballistic Skill."
+    }
+  ]
+}

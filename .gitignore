@@ -1,0 +1,20 @@
+# Unity-generated project state
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Bb]uild/
+*.zip
+unity-build-*.log
+
+# IDE files
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.user
+
+# OS files
+Thumbs.db
+Desktop.ini
