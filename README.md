@@ -23,6 +23,10 @@ Deathwatch is not included in this repository or redistributed by Astartes Armou
 2. Extract the Astartes Armoury release into the game's user `Modifications` directory.
 3. Enable both `Deathwatch` and `AstartesArmoury_RT_MOD` in the Owlcat modification settings.
 
+## Installation ModFinder
+1. Just add the zip file to modfinder.
+
+
 The three weapons are granted once, unequipped, after an area loads when the actual main player character has `DW_AstartesRace`. A save-persistent marker makes the runtime grant idempotent and also supports existing Deathwatch saves.
 
 ## Building from source
