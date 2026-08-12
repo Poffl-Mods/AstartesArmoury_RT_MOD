@@ -19,13 +19,17 @@ Deathwatch is not included in this repository or redistributed by Astartes Armou
 
 ## Installation
 
-1. Install the required Deathwatch mod.
-2. Extract the Astartes Armoury release into the game's user `Modifications` directory.
-3. Enable both `Deathwatch` and `AstartesArmoury_RT_MOD` in the Owlcat modification settings.
+### Recommended: ModFinder
 
-## Installation ModFinder
-1. Just add the zip file to modfinder.
+1. Install **Deathwatch** and all of its required dependencies.
+2. Add the **Astartes Armoury** release ZIP to ModFinder.
 
+### Manual installation
+
+1. Install **Deathwatch** and all of its required dependencies.
+2. Extract the **Astartes Armoury** release ZIP into the game's user `Modifications` directory.
+3. Launch *Rogue Trader* and make sure **Deathwatch** and **Astartes Armoury** are enabled in the in-game Mods menu.
+4. Restart the game if prompted.
 
 The three weapons are granted once, unequipped, after an area loads when the actual main player character has `DW_AstartesRace`. A save-persistent marker makes the runtime grant idempotent and also supports existing Deathwatch saves.
 

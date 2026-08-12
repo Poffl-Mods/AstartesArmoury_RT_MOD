@@ -10,7 +10,7 @@
     },
     "aa-vigil-flavor": {
       "Offset": 0,
-      "Text": "Forged for a transhuman hand, this pistol keeps vigil where lesser weapons fall silent."
+      "Text": "Vigil's Oath has accompanied {name} through countless campaigns of the Long Vigil. Its name was earned upon the besieged world of Kharon Secundus, where he swore that no xenos would cross the breach while a single Imperial defender still drew breath. For three days, the line held. When relief finally arrived, the last rounds had long been spent and the ground before the walls was buried beneath the dead.\n\nThe oath has never been broken."
     },
     "aa-final-name": {
       "Offset": 0,
@@ -22,7 +22,7 @@
     },
     "aa-final-flavor": {
       "Offset": 0,
-      "Text": "Its chain-teeth have pronounced the Emperor's final judgement on countless foes."
+      "Text": "Final Judgement was taken up during the purging of Hive Tenebris, when a Genestealer infestation revealed itself only after generations of corruption had spread through the ruling houses. Deep beneath the hive, {name} fought beside his Deathwatch brothers against the Patriarch and the brood that surrounded it.\n\nWhen the Patriarch finally fell, Final Judgement had carved through its guard and buried its roaring teeth deep within the creature's skull. The weapon has remained at his side ever since — reserved for enemies for whom a bolt round would be too merciful."
     },
     "aa-wrath-name": {
       "Offset": 0,
@@ -34,7 +34,7 @@
     },
     "aa-wrath-flavor": {
       "Offset": 0,
-      "Text": "Every report is a hymn; every spent casing, an offering."
+      "Text": "God-Emperor's Wrath earned its name during the fall of Vardos Prime. With the outer defences broken and the surviving Imperial Guard preparing for a final stand, {name} took up the heavy bolter and advanced alone into the breach.\n\nFor hours, its thunder did not cease. When dawn broke, the enemy assault had collapsed and the approaches to the Imperial lines were carpeted with the dead. The surviving Guardsmen claimed that they had not witnessed a warrior firing a weapon that night, but the wrath of the God-Emperor made manifest.\n\nThe name endured."
     }
   }
 }
